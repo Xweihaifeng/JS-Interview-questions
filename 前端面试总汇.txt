@@ -1,0 +1,67 @@
+经典css部分：
+1、display:none与visibility：hidden的区别？
+    a、display：none 不显示对应的元素，在文档布局中不再分配空间（回流+重绘）
+    b、visibility：hidden 隐藏对应元素，在文档布局中仍保留原来的空间（重绘）
+2、为什么需要清除浮动？清除浮动的方式？
+3、CSS Sprites？
+4、div水平垂直居中有几种，阐述？
+5、display有哪些值？说明他们的作用？
+6、position有哪些值？说明他们的作用？
+7、css3的flex(弹性盒布局模型)以及使用场景？
+
+
+
+
+经典js部分：
+1、前端用过那些加密解密：MD5、base64、hmac-sha1
+2、http \ https \ http缓存 \ http Cookie \ http CORS \ http Code
+3、vue项目浏览器之间的兼容问题怎么处理的：npm install babel-polyfill
+4、程序中捕获异常的方法：try catch finally
+5、var a = 2, b = 3; var c = a+++b; 输出结果：// c = 5
+6、var a = [[['a',NaN, 1,2.4,5.7,'a',8],3,[[1e+10]],[null,89,89,56]],undefined] 用es6高阶函数方法实现下面的问题，输出结果
+    a、一维数组
+    b、去重
+    c、去假值
+    d、排序
+    答案：[...new Set(a.flat().flat().flat())].filter(x=>x).sort((m,n)=>m-n)；
+    结果：["a", 1, 2.4, 3, 5.7, 8, 56, 89, 1e+10]
+7、es6新特性及用法，原理：class 、 async、await 、promise 、 Symbol 、 Proxy代理
+8、promise有几种状态，什么时候会进入catch?
+    a、三个状态：pending、fulfilled、reject
+    b、两个过程：pedding->fulfilled、pedding->rejected
+    c、当pending为rejected时，会进入catch
+
+
+
+经典vue部分：
+1、vue父组件向子组件传递数据？子组件像父组件传递事件？同级组件之间传递数据方法？
+    a、通过props；
+    b、$emit方法；
+    c、Bus.$emit('val')发送，Bus.$on('val')接收
+2、$nextTick的使用，keep-alive的作用：
+    a、当你修改了data的值然后马上获取这个dom元素的值，是不能获取到更新后的值，此时需要使用$nextTick这个回调，让修改后的data值渲染更新到dom元素之后在获取，才能成功。
+    b、keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。
+3、vue冒泡常用的修饰符：
+    a、.stop：等同于JavaScript中的event.stopPropagation()，防止事件冒泡
+    b、.prevent：等同于JavaScript中的event.preventDefault()，防止执行预设的行为
+    c、.capture：与事件冒泡的方向相反，事件捕获由外到内；
+    d、.self：只会触发自己范围内的事件，不包含子元素；
+    e、.once：只会触发一次。
+4、Vue-router跳转和location.href有什么区别：
+    a、vue-router就是用了history.pushState()，尤其是在history模式下。history.pushState('/url')，无刷新页面，静态跳转；
+    b、location.href='/url'来跳转，简单方便，但是刷新了页面；
+5、第一次页面加载会触发哪几个钩子：beforeCreate， created， beforeMount， mounted
+6、生命周期：beforeCreate、created， beforeMount， mounted、beforeUpdate、updated、beforeDestory、destroyed
+7、vuex是什么？怎么使用？哪种功能场景使用它？vuex有哪几种属性？
+    a、vue框架中状态管理。在main.js引入store，注入。
+    b、新建了一个目录store.js，….. export 
+    c、单页应用中，组件之间的状态。音乐播放、登录状态、加入购物车
+    d、State、 Getter、Mutation 、Action、 Module
+        state => 基本数据(数据源存放地)
+        getters => 从基本数据派生出来的数据
+        mutations => 提交更改数据的方法，同步！
+        actions => 像一个装饰器，包裹mutations，使之可以异步。
+        modules => 模块化Vuex
+8、computed和watch的使用场景：
+    a、computed: 当一个属性受多个属性影响的时候就需要用到computed【例如：购物车商品结算的时候】
+    b、watch: 当一条数据影响多条数据的时候就需要用watch 【例如：搜索数据】
