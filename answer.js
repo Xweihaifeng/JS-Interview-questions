@@ -98,12 +98,20 @@ var arrSum = (a,b,c,d,e) => [...new Set([...a,...b,...c,...d,...e].flat().flat()
         },1000); 
     }
     改造一下函数,在setTimeout内的console打印出:0~9,
-/* 
-for(var i=0;i<10;i++){
-    (function(i){
-        setTimeout(function(){
-         alert(i);
-        },1000);
-    })(i)
-}
-*/
+    // 方法一：
+    /* 
+    for(var i=0;i<10;i++){
+        (function(i){
+            setTimeout(function(){
+            alert(i);
+            },1000);
+        })(i)
+    }
+    */
+
+    // 方法二：
+    /* for (let i = 0; i < 10; i++) {
+        setTimeout(function() {
+            console.info(i);
+        }, 1000);
+    } */
