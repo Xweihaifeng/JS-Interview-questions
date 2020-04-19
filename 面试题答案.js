@@ -1,8 +1,3 @@
-1 最新的js有几种数据类型，都是什么？他们分别存在内存哪里（栈？ 堆？）
-基本类型：Number、String 、Boolean 、Null、Undefined 、Symbol 基本数据类型存储在栈中
-引用类型：object 引用数据类型（对象）存储在堆中,指针放在栈中; 
-
-2 打印结果
 面试题:[2020-4-18]
 1 最新的js有几种数据类型，都是什么？他们分别存在内存哪里（栈？ 堆？）
 // 基本类型: [Number, boolean, String, null, undefined, Symbol] 基本数据类型存储在栈中
@@ -49,7 +44,7 @@ var setData = (nums, target, X = new Map()) => nums.map((v,k) => {
 
 面试题:[2020-4-19],
 1: es6字符串反向['ABCDEFGHIJKLMNOPQRSTUVEXYZ'];
-// 'ABCDEFGHIJKLMNOPQRSTUVEXYZ'.join().split('').reverse().join('');
+// ['ABCDEFGHIJKLMNOPQRSTUVEXYZ'].join().split('').reverse().join('');
 2: 将数字['12345678']转化成RMB形式：12,345,678,
 /*
 // 方法一: 正则
@@ -63,7 +58,7 @@ function RMB(arr, res = []){
     }
     return res.reverse().join('');
 }
-// 运行:RMB("12345678.34");
+// 运行:RMB([12345678.34]);
 */
 3: 打印字符串'abcdefffdddddd'里出现出现频率最多的字符;
 /* 
