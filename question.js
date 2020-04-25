@@ -49,48 +49,38 @@ function Parent() {
     this.b = [1, 2, this.a];
     this.c = { demo: 5 };
     this.show = function () {
-      console.log(this.a, this.b, this.c.demo);
+        console.log(this.a, this.b, this.c.demo);
     };
-  }
-  
-  function Child() {
+}
+function Child() {
     this.a = 2;
     this.change = function () {
-      this.b.push(this.a);
-      this.a = this.b.length;
-      this.c.demo = this.a++;
+        this.b.push(this.a);
+        this.a = this.b.length;
+        this.c.demo = this.a++;
     };
-  }
-  
-  Child.prototype = new Parent();
-  var parent = new Parent();
-  var child1 = new Child();
-  var child2 = new Child();
-  child1.a = 11;
-  child2.a = 12;
-  parent.show();
-  child1.show();
-  child2.show();
-  child1.change();
-  child2.change();
-  parent.show();
-  child1.show();
-  child2.show();
-
-2:编程题 如何深拷贝一个对象
-3:算法题
-编写一个函数来查找字符串数组中的最长公共前缀。
-
-如果不存在公共前缀，返回空字符串 ""。
-示例 1:
-
-输入: ["flower","flow","flight"]
-输出: "fl"
-示例 2:
-
-输入: ["dog","racecar","car"]
-输出: ""
-解释: 输入不存在公共前缀。
-说明:
-
-所有输入只包含小写字母 a-z 。
+}
+Child.prototype = new Parent();
+var parent = new Parent();
+var child1 = new Child();
+var child2 = new Child();
+child1.a = 11;
+child2.a = 12;
+parent.show();
+child1.show();
+child2.show();
+child1.change();
+child2.change();
+parent.show();
+child1.show();
+child2.show();
+2:编程题: 如何深拷贝一个对象
+3:算法题: 编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 ""。
+    示例 1:
+        输入: ["flower","flow","flight"]
+        输出: "fl"
+    示例 2:
+        输入: ["dog","racecar","car"]
+        输出: ""
+    解释: 输入不存在公共前缀。
+    说明: 所有输入只包含小写字母 a-z 。
