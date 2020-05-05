@@ -91,7 +91,19 @@ function fib(n) {
   if (n === 1 || n === 2) return n - 1
   return fib(n - 1) + fib(n - 2)
 }
+function fib1(n) {
+  let a = 0
+  let b = 1
+  let c = a + b
+  for (let i = 3; i < n; i++) {
+    a = b
+    b = c
+    c = a + b
+  }
+  return c
+}
 console.log(fib(10))
+console.log(fib1(10))
 2: 打印结果是什么?
 function Foo(){
 	getName=funtion(){

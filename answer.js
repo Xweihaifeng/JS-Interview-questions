@@ -115,3 +115,52 @@ var arrSum = (a,b,c,d,e) => [...new Set([...a,...b,...c,...d,...e].flat().flat()
             console.info(i);
         }, 1000);
     } */
+
+面试题：[2020-4-25]
+1: 写出输出结果
+function Parent() {
+    this.a = 1;
+    this.b = [1, 2, this.a];
+    this.c = { demo: 5 };
+    this.show = function () {
+        console.log(this.a, this.b, this.c.demo);
+    };
+}
+function Child() {
+    this.a = 2;
+    this.change = function () {
+        this.b.push(this.a);
+        this.a = this.b.length;
+        this.c.demo = this.a++;
+    };
+}
+Child.prototype = new Parent();
+var parent = new Parent();
+var child1 = new Child();
+var child2 = new Child();
+child1.a = 11;
+child2.a = 12;
+parent.show(); // 1 | [1,2,1] | {demo: 5}
+child1.show(); // 11 | [1,2,11] | {demo: 5}
+child2.show(); // 12 | [1,2,12] | {demo: 5}
+child1.change();
+child2.change();
+parent.show(); // 1 | [1,2,1] | {demo: 5}
+child1.show(); // 4 | [1,2,11,11] | {demo: 5}
+child2.show(); // 4 | [1,2,12,12] | {demo: 5}
+
+2: 编程题: 如何深拷贝一个对象,
+/* 
+var obj = new Object();
+JSON.parse(JSON.stringify(obj));
+*/
+
+3: 算法题: 编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 ""。
+    示例 1:
+        输入: ["flower","flow","flight"]
+        输出: "fl"
+    示例 2:
+        输入: ["dog","racecar","car"]
+        输出: ""
+    解释: 输入不存在公共前缀。
+    说明: 所有输入只包含小写字母 a-z 。,
