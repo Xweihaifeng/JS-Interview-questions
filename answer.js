@@ -1,4 +1,4 @@
-面试题:[2020-4-18]
+面试题:[2020-4-11]
 1 最新的js有几种数据类型，都是什么？他们分别存在内存哪里（栈？ 堆？）
 // 基本类型: [Number, boolean, String, null, undefined, Symbol] 基本数据类型存储在栈中
 // 引用类型: [Object, Array, function] 引用数据类型（对象）存储在堆中,指针放在栈中; 
@@ -42,7 +42,7 @@ var setData = (nums, target, X = new Map()) => nums.map((v,k) => {
 6 附加题 创建git库的命令
 // [git init],
 
-面试题:[2020-4-19],
+面试题:[2020-4-18],
 1: es6字符串反向['ABCDEFGHIJKLMNOPQRSTUVEXYZ'];
 // ['ABCDEFGHIJKLMNOPQRSTUVEXYZ'].join().split('').reverse().join('');
 2: 将数字['12345678']转化成RMB形式：12,345,678,
@@ -206,3 +206,5 @@ function Prefix(arr,X=[],T=[],Y={},Z=1) {
 var prefix = new Prefix(arr);
 console.log(prefix.getData()); 
  */
+
+面试题：[2020-5-2]
